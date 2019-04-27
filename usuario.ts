@@ -1,3 +1,5 @@
+import { Album } from './album';
+
 export class Usuario {
     private nombre: String;
     private apellido: String;
@@ -6,7 +8,7 @@ export class Usuario {
     private correo: String;
     private verificado: boolean;
     private verificador: String;
-                                                                                     
+    private albumes: Array<Album>;                                                   
     /*constructor(nombre: String,apellido: String,intereses: String, correo: String, verificado: boolean,verificador: String) {
         this.setNombre;
         this.setApellido;
@@ -16,7 +18,7 @@ export class Usuario {
         this.setVerificador;
     }*/
     constructor(){
-        
+        this.setAlbumes(new Array<Album>());
     }
      
     private setNombre (nombre : String) {
@@ -69,5 +71,19 @@ export class Usuario {
 
     }
     
+    private setAlbumes (album : Array<Album>) {
+        this.albumes = album;
+    }
+     
+    public getAlbum() : Array<Album> {
+        return this.albumes;
+    }
 
+    public agregarAlbum(nombre: String){
+
+        let album = new Album(nombre);
+
+        this.albumes.push(album);
+
+    }
 }
