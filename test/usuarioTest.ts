@@ -85,3 +85,19 @@ describe('Usuario', () => {
         
     });  
 });
+describe('Usuario', () => {
+ 
+    it('1.7 Quitar album 4 despues de agregar 10 albums"', () => {
+        let usuario = new Usuario();
+
+
+        usuario.agregar10Albums();
+        
+        usuario.quitarAlbum("Album 4");
+
+        expect(usuario.getAlbum().length).to.equal(9);
+
+        
+        
+    });  
+});
