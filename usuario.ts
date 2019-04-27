@@ -90,9 +90,19 @@ export class Usuario {
     public quitarAlbum(nombre: String){
         var i;
         for (i = 0; i < this.albumes.length; i++){
-            if (this.albumes[i].getNombre() ==nombre ){
+            if (this.albumes[i].getNombre() == nombre ){
                 this.albumes.splice (i, 1);
             }
         }
+    }
+
+    public obtenerAlbumPorNombre(nombre: String){
+        var i;
+        for (i = 0; i < this.albumes.length; i++){
+            if (this.albumes[i].getNombre() == nombre ){
+                return this.albumes[i];
+            }
+        }
+
     }
 }
