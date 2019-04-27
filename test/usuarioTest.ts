@@ -101,3 +101,18 @@ describe('Usuario', () => {
         
     });  
 });
+
+describe('Usuario', () => {
+ 
+    it('1.8 Agregar imagen en un album segun el nombre"', () => {
+        let usuario = new Usuario();
+
+        usuario.agregar10Albums();
+
+        usuario.agregarImagenEnAlbum("fotoperfil1.jpg", "Album 7");
+
+        expect(usuario.obtenerAlbumPorNombre("Album 7").obtenerImagenPorNombre("fotoperfil1.jpg")).to.equal("fotoperfil1.jpg");
+        
+        
+    });  
+});

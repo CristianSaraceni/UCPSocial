@@ -1,3 +1,5 @@
+import { Usuario } from './usuario';
+
 export class Album {
     private imagenes: Array<String>;
     private nombre: String;
@@ -5,6 +7,7 @@ export class Album {
 
     constructor(nombre: String) {
         this.setNombre(nombre);
+        this.setImagenes(new Array<String>());
     }
 
     private setNombre (nombre : String) {
@@ -15,12 +18,32 @@ export class Album {
         return this.nombre;
     }
 
-    private setImagenes (imagen : String) {
-        this.imagenes.push(imagen);
+    private setImagenes (imagen : Array<String>) {
+        this.imagenes = imagen;
     }
      
     public getImagenes() : Array<String> {
         return this.imagenes;
     }
-    
+
+    public agregarImagen(nombre: String){
+
+
+        this.imagenes.push(nombre);
+
+     
+
+        
+
+    }
+
+    public obtenerImagenPorNombre(nombre: String){
+        var i;
+        for (i = 0; i < this.imagenes.length; i++){
+            if (this.imagenes[i] == nombre ){
+                return this.imagenes[i];
+            }
+        }
+
+    }
 }
