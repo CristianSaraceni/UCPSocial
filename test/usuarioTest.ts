@@ -116,3 +116,22 @@ describe('Usuario', () => {
         
     });  
 });
+describe('Usuario', () => {
+ 
+    it('1.9 Eliminar imagen de un album segun el nombre"', () => {
+        let usuario = new Usuario();
+
+        usuario.agregar10Albums();
+
+        usuario.agregarImagenEnAlbum("fotoperfil1.jpg", "Album 7");
+        usuario.agregarImagenEnAlbum("fotoperfil2.jpg", "Album 7");
+        usuario.agregarImagenEnAlbum("fotoperfil3.jpg", "Album 7");
+
+        usuario.quitarImagenEnAlbum("fotoperfil3.jpg", "Album 7");
+
+        expect(usuario.obtenerAlbumPorNombre("Album 7").getImagenes().length).to.equal(2);
+        expect(usuario.obtenerAlbumPorNombre("Album 7").obtenerImagenPorNombre("fotoperfil1.jpg")).to.equal("fotoperfil1.jpg");
+        expect(usuario.obtenerAlbumPorNombre("Album 7").obtenerImagenPorNombre("fotoperfil2.jpg")).to.equal("fotoperfil2.jpg");
+
+    });  
+});

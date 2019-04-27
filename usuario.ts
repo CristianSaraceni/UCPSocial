@@ -147,4 +147,10 @@ export class Usuario {
         this.obtenerAlbumPorNombre(album).agregarImagen(nombre);
 
     }
+    public quitarImagenEnAlbum(nombre: String , album: String){
+
+
+        this.obtenerAlbumPorNombre(album).quitarImagenPorNombre(nombre);
+
+    }
 }
