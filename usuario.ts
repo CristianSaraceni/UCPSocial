@@ -81,9 +81,24 @@ export class Usuario {
 
     public agregarAlbum(nombre: String){
 
-        let album = new Album(nombre);
+        var i;
+        var tamanioArray = this.albumes.length;
+        var tamanioArrayAux = 0;
 
-        this.albumes.push(album);
+        for (i = 0; i < this.albumes.length; i++){
+            if (this.albumes[i].getNombre() != nombre ){
+                tamanioArrayAux += 1;
+            }
+        }
+        if (tamanioArray == tamanioArrayAux){
+
+            let album = new Album(nombre);
+
+            this.albumes.push(album);
+            
+        }
+
+        
 
     }
 

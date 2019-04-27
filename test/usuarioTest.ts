@@ -13,7 +13,7 @@ describe('Usuario', () => {
 });
 describe('Usuario', () => {
 
-    it('1.1 Quitar un album por el nombre', () => {
+    it('1.2 Quitar un album por el nombre', () => {
         let usuario = new Usuario();
         usuario.agregarAlbum("Album 1");
         usuario.agregarAlbum("Album 2");
@@ -27,7 +27,7 @@ describe('Usuario', () => {
 });
 describe('Usuario', () => {
  
-    it('1.1 Obtener un album por el nombre', () => {
+    it('1.3 Obtener un album por el nombre', () => {
         let usuario = new Usuario();
         usuario.agregarAlbum("Album 1");
         usuario.agregarAlbum("Album 2");
@@ -38,5 +38,22 @@ describe('Usuario', () => {
         var nombre = usuario.obtenerAlbumPorNombre("Album Pepe Grillo").getNombre();
 
         expect(nombre).to.equal("Album Pepe Grillo");
+    });  
+});
+
+describe('Usuario', () => {
+ 
+    it('1.4 No agregar albumes con el mismo nombre', () => {
+        let usuario = new Usuario();
+        usuario.agregarAlbum("Album 1");
+        usuario.agregarAlbum("Album 2");
+        usuario.agregarAlbum("Album 3");
+        usuario.agregarAlbum("Album 4");
+        usuario.agregarAlbum("Album 2");
+        usuario.agregarAlbum("Album 3");
+
+        var tamanioDelArray = usuario.getAlbum().length;
+
+        expect(tamanioDelArray).to.equal(4);
     });  
 });
