@@ -38,7 +38,11 @@ export class Album {
 
 
         this.imagenes.push(nombre);
- 
+        
+        if (this.imagenes.length == 1){
+            this.agregarCaratula(nombre);
+
+        }
 
     }
     public quitarImagenPorNombre(nombre: String){
