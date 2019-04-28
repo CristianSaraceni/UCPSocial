@@ -3,7 +3,7 @@ import { Usuario } from './usuario';
 export class Album {
     private imagenes: Array<String>;
     private nombre: String;
-
+    private caratula: String;
 
     constructor(nombre: String) {
         this.setNombre(nombre);
@@ -26,14 +26,19 @@ export class Album {
         return this.imagenes;
     }
 
+    private setCaratula (caratula : String) {
+        this.caratula = caratula;
+    }
+     
+    public getCaratula() : String {
+        return this.caratula;
+    }
+
     public agregarImagen(nombre: String){
 
 
         this.imagenes.push(nombre);
-
-     
-
-        
+ 
 
     }
     public quitarImagenPorNombre(nombre: String){
@@ -55,5 +60,9 @@ export class Album {
         }
 
     }
-    
+
+
+    public agregarCaratula(caratula : String) {
+        this.setCaratula(caratula);
+    }
 }

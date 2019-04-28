@@ -153,4 +153,5 @@ export class Usuario {
         this.obtenerAlbumPorNombre(album).quitarImagenPorNombre(nombre);
 
     }
+    
 }

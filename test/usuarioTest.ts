@@ -135,3 +135,22 @@ describe('Usuario', () => {
 
     });  
 });
+
+describe('Usuario', () => {
+ 
+    it('1.10 Asignar una foto del album como caratula', () => {
+        let usuario = new Usuario();
+
+        usuario.agregar10Albums();
+
+        usuario.agregarImagenEnAlbum("fotoperfil1.jpg", "Album 7");
+        usuario.agregarImagenEnAlbum("fotoperfil2.jpg", "Album 7");
+        usuario.agregarImagenEnAlbum("fotoperfil3.jpg", "Album 7");
+
+        usuario.obtenerAlbumPorNombre("Album 7").agregarCaratula("fotoperfil3.jpg");
+
+        expect(usuario.obtenerAlbumPorNombre("Album 7").getCaratula()).to.equal("fotoperfil3.jpg");
+        
+        
+    });  
+});
