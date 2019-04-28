@@ -163,5 +163,11 @@ export class Usuario {
         }
 
     }
+    public agregarImagenEnAlbumYposicionEspecifica(imagen : String,album : String,posicion : number){
+
+        this.obtenerAlbumPorNombre(album).agregarImagenEnPosicionEspecifica(imagen,posicion);
+
+    }
+
 
 }

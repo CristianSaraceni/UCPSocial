@@ -69,4 +69,10 @@ export class Album {
     public agregarCaratula(caratula : String) {
         this.setCaratula(caratula);
     }
+
+    public agregarImagenEnPosicionEspecifica(nombre: String,  posicion: number){
+
+        this.imagenes.splice(posicion,0,nombre);
+
+    }
 }

@@ -192,3 +192,32 @@ describe('Usuario', () => {
 
     });  
 });
+
+describe('Usuario', () => {
+
+    it('1.13 Agregar imagen en album y posicion especifica', () => {
+        let usuario = new Usuario();
+
+
+        usuario.agregarAlbum("Album 5");
+
+        usuario.agregarImagenEnAlbum("foto1.jpg", "Album 5");
+        usuario.agregarImagenEnAlbum("foto2.jpg", "Album 5");
+        usuario.agregarImagenEnAlbum("foto3.jpg", "Album 5");
+        usuario.agregarImagenEnAlbum("foto4.jpg", "Album 5");
+        usuario.agregarImagenEnAlbum("foto5.jpg", "Album 5");
+        usuario.agregarImagenEnAlbum("foto6.jpg", "Album 5");
+        usuario.agregarImagenEnAlbum("foto8.jpg", "Album 5");
+        usuario.agregarImagenEnAlbum("foto9.jpg", "Album 5");
+        usuario.agregarImagenEnAlbum("foto10.jpg", "Album 5");
+        usuario.agregarImagenEnAlbum("foto11.jpg", "Album 5");
+
+
+        expect(usuario.obtenerAlbumPorNombre("Album 5").getImagenes().length).to.equal(10);
+
+        usuario.agregarImagenEnAlbumYposicionEspecifica("foto7.jpg", "Album 5", 7);
+
+        expect(usuario.obtenerAlbumPorNombre("Album 5").getImagenes().length).to.equal(11);
+        expect(usuario.obtenerAlbumPorNombre("Album 5").obtenerImagenPorNombre("foto7.jpg")).to.equal("foto7.jpg");
+    });  
+});
