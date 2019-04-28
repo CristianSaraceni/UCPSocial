@@ -154,3 +154,22 @@ describe('Usuario', () => {
         
     });  
 });
+describe('Usuario', () => {
+ 
+    it('1.11 Asignar su imagen de perfil del album "Fotos de Perfil"', () => {
+        let usuario = new Usuario();
+
+        usuario.agregarAlbum("Fotos de Perfil");
+        
+        usuario.agregarImagenEnAlbum("fotoperfil1.jpg", "Fotos de Perfil");
+        usuario.agregarImagenEnAlbum("fotoperfil2.jpg", "Fotos de Perfil");
+        usuario.agregarImagenEnAlbum("fotoperfil3.jpg", "Fotos de Perfil");
+
+        usuario.asignarFotoDePerfil("fotoperfil3.jpg");
+
+
+        expect(usuario.getImagen()).to.equal("fotoperfil3.jpg");
+        
+        
+    });  
+});

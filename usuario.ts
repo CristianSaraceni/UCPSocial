@@ -153,5 +153,15 @@ export class Usuario {
         this.obtenerAlbumPorNombre(album).quitarImagenPorNombre(nombre);
 
     }
-    
+
+    public asignarFotoDePerfil(nombre: String){
+
+        var comprobar = this.obtenerAlbumPorNombre("Fotos de Perfil").obtenerImagenPorNombre(nombre);
+        
+        if(comprobar == nombre){
+            this.setImagen(nombre);
+        }
+
+    }
+
 }
